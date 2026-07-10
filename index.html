@@ -848,7 +848,7 @@ input[readonly] { opacity: .5; cursor: default; }
 
     <!-- Rodapé -->
     <div class="dash-footer">
-      <span>Clínica Estoque v2.0</span>
+      <span>Duo Care v2.0</span>
       <span id="footer-sync">—</span>
     </div>
 
@@ -1599,6 +1599,16 @@ setTimeout(() => {
     usarDadosDemo();
   }
 }, 2500);
+</script>
+<script>
+// Registrar Service Worker para PWA
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js")
+      .then(reg => console.log("SW registrado:", reg.scope))
+      .catch(err => console.log("SW erro:", err));
+  });
+}
 </script>
 </body>
 </html>
